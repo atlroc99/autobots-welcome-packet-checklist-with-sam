@@ -1,0 +1,22 @@
+{
+  "checklist": [
+    {
+      "id": 1,
+      "name": "iTSecurityDocReviewedAndApproved",
+      "isChecked": false,
+      "label": "IT {systemName}® documents on BACnet/SC & {systemName}® Cloud reviewed and approved"
+    },
+    {
+      "id": 2,
+      "name": "outboundPortEnabled",
+      "isChecked": false,
+      "label": "Outbound Port {systemName}® (port 443 as default) enabled. (Following the IT Security documents {systemName}® above, BACnet/SC requires outbound communication to the cloud hosted BACnet/SC hub. If IT requires the {systemName}® Service URL to be whitelisted, note this on the provisioning form when ordering the license.)"
+    },
+    {
+      "id": 3,
+      "name": "certAuthIdentified",
+      "isChecked": false,
+      "label": "Certificate authority {systemName}® identified which will be used to {systemName}® generate BACnet/SC certificates"
+    }
+  ]
+}

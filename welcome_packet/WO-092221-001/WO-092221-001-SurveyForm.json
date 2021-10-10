@@ -1,0 +1,40 @@
+{
+  "dealershipname": "AUTOMATED LOGIC - GEORGIA (03820)",
+  "userdetails": {
+    "name": "Ujali Sargar",
+    "email": "ujali.sargar@carrier.com",
+    "phone": "03456765456",
+    "role": "sales"
+  },
+  "endcustomerinfo": {
+    "companyname": "LTI",
+    "address": "test123",
+    "citystate": "city1",
+    "zipcode": "410206"
+  },
+  "location": "Bangladesh",
+  "buildingtype": "Commercial Office",
+  "sitemigrationdate": "",
+  "checkboxcloudhost": "",
+  "customerapproach": "NoAnswer",
+  "port443": null,
+  "iplevel": "3",
+  "WebCTRLSerialNumber": "SN9999",
+  "systemstatistics": {
+    "systemstatistics": null,
+    "noofpoints": "1",
+    "nooftrendsources": null,
+    "nooftrendsamples": null
+  },
+  "yeartoretainsystem": "NoAnswer",
+  "NoOfrequiredaccessusers": "",
+  "preferredfrequency": "Daily",
+  "checkboxwebctrllist": "",
+  "systemdesgindetails": {
+    "ApproxNoofControllers": null,
+    "ApproxNoofPoints": null
+  },
+  "Retaindatabaseyear": null,
+  "NoofBACnetDeviceifnovpn": null,
+  "AddonFeatures": null
+}

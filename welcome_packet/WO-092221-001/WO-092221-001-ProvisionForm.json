@@ -1,0 +1,14 @@
+{
+    "outport": "",
+    "portrestriction": "Proxy",
+    "proxyserveraddress": "yes",
+    "IsIpNonIpupdated": "Yes",
+    "IssiteupdatedtoLatest": null,
+    "systemname": "https://hfsk-234.webctrl.automatedlogic.com;https://hfsk-234-hub.webctrl.automatedlogic.com;https://hfsk-234-sc.webctrl.automatedlogic.com",
+    "preferredlanguage": "English",
+    "systemregion": "US East",
+    "timezone": "Mountain",
+    "ITReviewed": "Yes",
+    "knownmigrationtargetdate": "08/27/2021",
+    "timeofday": "3 am - 6 am"
+}
