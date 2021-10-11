@@ -11,37 +11,46 @@ Globals:
     Timeout: 7
     Runtime: python3.8
     CodeUri: welcome_packet/
-
 Resources:
-  GetChecklistItemsFunction:
-    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+  PrepareChecklistForDealerfunction:
+    Type: AWS::Serverless::Function
     Properties:
-      Handler: get_checklist_item.lambda_handler
+      Handler: prepare_checklist_for_dealer.lambda_handler
       Events:
-        GetChecklist:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+        PrepareChecklistForDealer:
+          Type: Api
           Properties:
-            Path: /checklists/:{userid}
+            Path: /checklists/dealer-checklist # append /dealership-name
             Method: get
-  UpdateChecklistItemsFunction:
-    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+  GetChecklistByDealerNameFunction: #used by admin to lookup checklist progress for a dealer
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: get_checklist_by_dealer_name.lambda_handler
+      Events:
+        GetChecklistByDealeName:
+          Type: Api
+          Properties:
+            Path: /checklists/{dealershipname}
+            Method: get
+  DealerUpdateChecklistItemsFunction:
+    Type: AWS::Serverless::Function
     Properties:
       Handler: update_checklist_item.lambda_handler
       Events:
         UpdateChecklist:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Type: Api
           Properties:
-            Path: /checklists/:{userid}
+            Path: /checklists/{dealershipname}
             Method: put
-  SubmitChecklistItemsFunction:
-    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+  DealerSubmitChecklistFunction:
+    Type: AWS::Serverless::Function
     Properties:
       Handler: submit_checklist_item.lambda_handler
       Events:
         SubmitChecklist:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Type: Api
           Properties:
-            Path: /checklists/:{userid}
+            Path: /checklists/{dealershipname}
             Method: post
 #Outputs:
 #  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
