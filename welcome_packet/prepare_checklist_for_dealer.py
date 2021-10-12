@@ -5,29 +5,24 @@ import json
 
 
 def lambda_handler(event, context):
+    print('\n*** Preparing checklist for Dealer ...readin from file')
     with open('./checklists/minified_checklist.json') as from_checklist_file:
-        checklist = json.load(from_checklist_file)
+        from_file = json.load(from_checklist_file)
     # print(type(checklist))
     # print_pretty_json(checklist)
+    # check with Shannon
+    system_name = 'i-Vu'
+    items = from_file.get('checklist')
+    for item in items:
+        item['label'] = item['label'].replace('{systemName}', system_name)
+
+    print('from_file', from_file)
     response_body = {
         'statusCode': 200,
-        'headers': {
-            'content-type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': '*'
+        'body': json.dumps({'results': from_file}),
+         'headers': {
+            'Access-Control-Allow-Origin': 'http://localhost:8000',
         },
-        'body': json.dumps({'results' : checklist})
     }
     print('response_body:',response_body)
     return response_body
-
-# def print_pretty_dict_json(data: dict):
-#     print(f'the type is: {type(data)}')
-#     print(json.dumps(data, indent=2))
-#
-# def print_pretty_string_json(data: str):
-#     print(json.dumps(data, indent=2))
-#
-#
-# resp = lambda_handler(None, None)
-# print_pretty_dict_json(resp)
